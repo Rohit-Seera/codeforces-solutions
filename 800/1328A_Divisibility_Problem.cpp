@@ -1,0 +1,27 @@
+// Problem: Divisibility Problem
+// Rating: 800
+// Link: https://codeforces.com/problemset/problem/1328/A
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    long long a, b;
+    cin >> a >> b;
+
+    cout << (b - (a % b)) % b << '\n';
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+
+    while (t--) {
+        solve();
+    }
+
+    return 0;
+}
