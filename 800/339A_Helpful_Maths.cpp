@@ -1,32 +1,26 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
+using namespace std;
 
 int main() {
-    std::ios_base::sync_with_stdio(false);
-    std::cin.tie(NULL);
+    string s;
+    cin >> s;
 
-    std::string s;
-    if (!(std::cin >> s)) return 0;
-
-    int count[4] = {0}; 
+    vector<char> nums;
 
     for (char c : s) {
         if (c != '+') {
-            count[c - '0']++;
+            nums.push_back(c);
         }
     }
 
-    bool first = true;
-    for (int num = 1; num <= 3; ++num) {
-        while (count[num]--) {
-            if (!first) {
-                std::cout << '+';
-            }
-            std::cout << num;
-            first = false;
-        }
+    sort(nums.begin(), nums.end());
+
+    for (int i = 0; i < nums.size(); i++) {
+        if (i > 0) cout << "+";
+        cout << nums[i];
     }
-    std::cout << '\n';
+
+    cout << "\n";
 
     return 0;
 }
